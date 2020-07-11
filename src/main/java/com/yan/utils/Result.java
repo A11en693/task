@@ -1,40 +1,30 @@
 package com.yan.utils;
 
+import com.yan.utils.commom.Constant;
+import lombok.Data;
+import sun.security.pkcs11.wrapper.Constants;
+
+@Data
 public class Result<T> {
     private T data;
     private Boolean success;
     private String code;
     private String msg;
+    private int page;
+    private int pageSize;
+    private int totalSize;
 
-    public T getData() {
-        return data;
+    public Result(){
+
     }
 
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+   public Result(T data,int page,int pageSize,int totalSize){
+      this.data = data;
+      this.success = Constant.SUCCESS_STATUS;
+      this.code = Constant.SUCCESS_CODE;
+      this.msg = Constant.SUCCESS_MSG;
+      this.page = page;
+      this.pageSize = pageSize;
+      this.totalSize = totalSize;
+   }
 }

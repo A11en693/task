@@ -1,4 +1,4 @@
-package com.yan.task.zone.config.druidconfig;
+package com.yan.task.zone.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;

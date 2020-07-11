@@ -2,6 +2,7 @@ package com.yan.task.zone.aop;
 
 
 import com.yan.utils.Result;
+import com.yan.utils.commom.Constant;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -31,8 +32,8 @@ public class GlobalExceptionHandler {
         }
         Result<Boolean> result = new Result<>();
         result.setMsg("系统出了小差，请稍后再试");
-        result.setCode("500");
-        result.setSuccess(false);
+        result.setCode(Constant.FAIL_CODE);
+        result.setSuccess(Constant.FAIL_STATUS);
         result.setData(null);
         return result;
     }
